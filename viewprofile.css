@@ -10,7 +10,7 @@
 
 a {
     text-decoration: none;
-    color: #6366f1;
+    color: #000000;
 }
 
 li {
@@ -32,11 +32,16 @@ body {
 
 .container {
     display: flex;
+    height: 100%;
 }
 
 #sidebar {
-    display: flex;
-    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px; 
+    padding: 15px;
     background-color: #293b5f;
 }
 
@@ -87,11 +92,10 @@ a.sidebar-link:hover {
 }
 
 .main {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    width: 100%;
-    overflow: hidden;
+    margin-left: 250px;
+    padding: 15px;
+    background-color: #f4f4f4;
+    height: 100%;
 }
 
 .dashboard-navbar {
@@ -146,6 +150,39 @@ a.sidebar-link:hover {
     padding: 20px;
     background: #9db2bf;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+    margin-right: 20px;
+}
+.form-group label {
+    display:block;
+    margin-bottom: 5px;
+    color: #000000;
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+}
+.form-group input[disabled] {
+    background-color: #eee;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #27374d;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+}
+.btn:hover {
+    background-color: #526d82;
 }
 
 @keyframes fade {
@@ -238,6 +275,4 @@ a.sidebar-link:hover {
     .social-icons li a {
         color: #000;
     }
-
-
 }
