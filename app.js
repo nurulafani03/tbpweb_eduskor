@@ -6,7 +6,9 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var adminRouter = require('./routes/admin')
+var adminRouter = require('./routes/admin');
+
+var authRouter = require('./routes/auth'); //ragu ini kok ungu warnanya
 var app = express();
 
 // view engine setup
@@ -19,9 +21,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+app.use('/a', indexRouter);
 app.use('/users', usersRouter);
-app.use('/admin',adminRouter)
+app.use('/',adminRouter);
+
+app.use('/auth', authRouter); 
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
