@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Mata Kuliah
+    link(href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css")
+    script(src="https://cdn.tailwindcss.com")
+
+  body
+    .container
+      h1.text-3xl.font-bold.m-4 Mata Kuliah
+      table.table-auto.w-full.text-left.border-collapse
+        thead
+          tr.bg-custom.text-white
+            th.px-4.py-2.border No
+            th.px-4.py-2.border Kode Mata Kuliah
+            th.px-4.py-2.border Nama Mata Kuliah
+            th.px-4.py-2.border Dosen Pengampu
+            th.px-4.py-2.border Kelas
+            th.px-4.py-2.border Ruang Kelas
+            th.px-4.py-2.border Jadwal Kelas
+        tbody
+          each matakuliah, index in matakuliahs
+            tr
+              td.px-4.py-2.border= index + 1
+              td.px-4.py-2.border= matakuliah.kode_mata_kuliah
+              td.px-4.py-2.border= matakuliah.nama_mata_kuliah
+              td.px-4.py-2.border= matakuliah.dosen_pengampu
+              td.px-4.py-2.border= matakuliah.kelas
+              td.px-4.py-2.border= matakuliah.ruang_kelas
+              td.px-4.py-2.border= matakuliah.jadwal_kelas

@@ -1,7 +1,10 @@
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    title My Express Website
+    link(rel="stylesheet" href="/css/styles.css")
   body
-    block content
+    include ../partials/navbar
+    include ../partials/topbar
+    .content
+      block content

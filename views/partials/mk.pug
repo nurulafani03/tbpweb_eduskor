@@ -1,0 +1,82 @@
+meta(charset="UTF-8")
+meta(name="viewport", content="width=device-width,initial-scale=1")
+link(href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css", rel="stylesheet", type="text/css")
+script(src="https://cdn.tailwindcss.com")
+title Document
+style.
+  
+  .bg-custom {
+              background-color: #16105B;
+          }
+          .dropdown-content a {
+              color: #000; /* Set text color to black */
+          }
+  
+//  Navbar 
+.navbar.bg-custom.text-white
+  .flex-1
+    a.btn.btn-ghost.text-xl.text-white EduSkor
+  .dropdown.dropdown-end
+    .btn.btn-ghost.btn-circle.avatar(tabindex="0", role="button")
+      .w-10.rounded-full
+        img(alt="Tailwind CSS Navbar component", src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg")
+    ul.mt-3.z-[1].p-2.shadow.menu.menu-sm.dropdown-content.bg-base-100.rounded-box.w-52(tabindex="0")
+      li
+        a.justify-between.
+          
+          Profil
+          
+      li
+        a Pengaturan
+      li
+        a Keluar
+//  Layout with Sidebar 
+.flex
+  //  Sidebar 
+  .w-64.bg-custom.h-screen.text-white
+    .p-6
+      img.w-24.h-24.mx-auto(src="/unand.png", alt="Logo")
+    ul
+      li.p-4.hover:bg-gray-700
+        a(href="/") Dashboard
+      li.p-4.hover:bg-gray-700
+        a(href="/admin") Profil
+      li.p-4.hover:bg-gray-700
+        a(href="/views/partials/nilaimk.html") Nilai
+      li.p-4.hover:bg-gray-700
+        a(href="/views/partials/matakuliah.html") Matakuliah
+      li.p-4.hover:bg-gray-700
+        a(href="/logout") Bantuan
+  //  Main Content 
+  .flex-1.p-10
+    h1.text-3xl.font-bold Mata Kuliah
+    p.mt-4 Welcome to the dashboard!
+    //  Tabel Mata Kuliah 
+    .mt-8
+      table.table-auto.w-full.text-left.border-collapse
+        thead
+          tr.bg-custom.text-white
+            th.px-4.py-2.border No
+            th.px-4.py-2.border Kode Mata Kuliah
+            th.px-4.py-2.border Nama Mata Kuliah
+            th.px-4.py-2.border Dosen Pengampu
+            th.px-4.py-2.border Kelas
+            th.px-4.py-2.border Ruang Kelas
+            th.px-4.py-2.border Jadwal Kelas
+        tbody
+          tr
+            td.px-4.py-2.border 1
+            td.px-4.py-2.border MK001
+            td.px-4.py-2.border Pemrograman Web
+            td.px-4.py-2.border Dr. John Doe
+            td.px-4.py-2.border A
+            td.px-4.py-2.border R101
+            td.px-4.py-2.border Senin, 10:00 - 12:00
+          tr.bg-gray-100
+            td.px-4.py-2.border 2
+            td.px-4.py-2.border MK002
+            td.px-4.py-2.border Basis Data
+            td.px-4.py-2.border Prof. Jane Smith
+            td.px-4.py-2.border B
+            td.px-4.py-2.border R102
+            td.px-4.py-2.border Selasa, 13:00 - 15:00

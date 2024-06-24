@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css", rel="stylesheet", type="text/css")
+    script(src="https://cdn.tailwindcss.com")
+    title Nilai Mata Kuliah
+    style.
+      .bg-custom {
+        background-color: #16105B;
+      }
+      .btn-outline-red {
+        border: 2px solid #ff1414;
+        color: #00000000;
+      }
+      .dropdown-content a {
+        color: #000; /* Set text color to black */
+      }
+      .textarea-custom {
+            width: 100%;
+            max-width: 1000px;
+            height: 400px;
+        }
+  body
+    include layout/navbar
+    .flex
+      include layout/sidebar
+      // Main Content
+      .flex-1.p-10
+        h1.text-3xl.font-bold Kritik Nilai
+        p.mt-4 Jika ada penilaian yang diragukan, sertakan bukti dalam bentuk pdf
+        .container.mx-auto
+          textarea.textarea.textarea-bordered.textarea-lg.textarea-custom(placeholder="Ketik disini")
+        .mt-4
+          input.file-input.file-input-bordered.w-full.max-w-xs(type="file")
+          button.btn.btn-success.mt-2 Kirim

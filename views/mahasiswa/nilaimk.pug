@@ -1,0 +1,78 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css", rel="stylesheet", type="text/css")
+    script(src="https://cdn.tailwindcss.com")
+    title Nilai Mata Kuliah
+    style.
+      .bg-custom {
+        background-color: #16105B;
+      }
+      .btn-outline-red {
+        border: 2px solid #ff1414;
+        color: #00000000;
+      }
+      .dropdown-content a {
+        color: #000; /* Set text color to black */
+      }
+  body
+    include layout/navbar
+    .flex
+      include layout/sidebar
+      .flex-1.p-10
+        h1.text-3xl.font-bold Nilai
+        p.mt-4 Selamat datang di halaman Nilai Mata Kuliah!
+        // Tabel Nilai Mata Kuliah
+        .mt-8
+          table.table-auto.w-full.text-left.border-collapse
+            thead
+              tr.bg-custom.text-white
+                th.px-4.py-2.border No
+                th.px-4.py-2.border Kode Mata Kuliah
+                th.px-4.py-2.border Nama Mata Kuliah
+                th.px-4.py-2.border Dosen Pengampu
+                th.px-4.py-2.border SKS
+                th.px-4.py-2.border Nilai
+                th.px-4.py-2.border Detail Nilai
+            tbody
+              each ni, index in nilai
+                tr
+                  td.px-4.py-2.border #{index + 1}
+                  td.px-4.py-2.border #{ni.kode_mk}
+                  td.px-4.py-2.border #{ni.nama_mk}
+                  td.px-4.py-2.border #{ni.dosen_mk}
+                  td.px-4.py-2.border #{ni.jumlah_sks}
+                  td.px-4.py-2.border #{ni.nilai_mutu}
+                  td.px-4.py-2.border
+                    button.btn.btn-outline.btn-info(onclick=`document.getElementById('modal${index + 1}').showModal()`) Info
+                    dialog.modal(id=`modal${index + 1}`)
+                      .modal-box
+                        h3.font-bold.text-lg Detail Nilai
+                        .mt-9
+                        table.table-auto.w-full.text-left.border-collapse
+                          thead
+                            tr.bg-custom.text-white
+                              th.px-4.py-2.border Tugas
+                              th.px-4.py-2.border Quiz
+                              th.px-4.py-2.border Uts
+                              th.px-4.py-2.border Uas
+                              th.px-4.py-2.border TB
+                          tbody
+                           if detail_nilai && detail_nilai.length > 0
+                            each detail,index in detail_nilai
+                              tr
+                                td.px-4.py-2.border #{detail.tugas}
+                                td.px-4.py-2.border #{detail.quiz}
+                                td.px-4.py-2.border #{detail.uts}
+                                td.px-4.py-2.border #{detail.uas}
+                                td.px-4.py-2.border #{detail.tb}
+                            else
+                                tr
+                                 td.col-span-5.text-center.col-span-5 No data available
+                      .modal-action
+                        a.btn.btn-warning(href="/mahasiswa/kritiknilai") Kritik Nilai
+                        button.btn(onclick=`document.getElementById('modal${index + 1}').close()`) Close
+        .flex.justify-end.mt-8
+          button.btn.btn-outline-red Download

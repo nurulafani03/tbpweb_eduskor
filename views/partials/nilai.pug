@@ -1,0 +1,78 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css", rel="stylesheet", type="text/css")
+    script(src="https://cdn.tailwindcss.com")
+    title Mata Kuliah
+    style.
+      .bg-custom {
+        background-color: #16105B;
+      }
+      .btn-outline-red {
+        border: 2px solid #ff1414;
+        color: #00000000;
+      }
+      .dropdown-content a {
+        color: #000; /* Set text color to black */
+      }
+  body
+    include layout/navbar  
+    .flex
+      include layout/sidebar 
+        //  Main Content 
+.flex-1.p-10
+  h1.text-3xl.font-bold Nilai
+  select.select.select-accent.w-full.max-w-xs
+    option(disabled, selected) Tahun Ajaran/Semester
+    option 2024/Genap
+    option 2023/Ganjil
+  //  Tabel Mata Kuliah 
+  .mt-8
+    table.table-auto.w-full.text-left.border-collapse
+      thead
+        tr.bg-custom.text-white
+          th.px-4.py-2.border No
+          th.px-4.py-2.border Kode Mata Kuliah
+          th.px-4.py-2.border Nama Mata Kuliah
+          th.px-4.py-2.border Dosen Pengampu
+          th.px-4.py-2.border SKS
+          th.px-4.py-2.border Nilai
+          th.px-4.py-2.border Detail Nilai
+      tbody
+        tr
+          td.px-4.py-2.border 1
+          td.px-4.py-2.border MK001
+          td.px-4.py-2.border Pemrograman Web
+          td.px-4.py-2.border Dr. John Doe
+          td.px-4.py-2.border 3
+          td.px-4.py-2.border A
+          td.px-4.py-2.border
+            button.btn.btn-outline.btn-info(onclick="document.getElementById(\'modal1\').showModal()") info
+            dialog#modal1.modal
+              .modal-box
+                h3.font-bold.text-lg Detail Nilai
+                p.py-4 Nilai UTS: 90
+                p.py-4 Nilai UAS: 85
+                .modal-action
+                  a.btn.btn-warning(href="/views/partials/kritiknilai.html") Kritik Nilai
+                  button.btn(onclick="document.getElementById(\'modal1\').close()") Close
+        tr.bg-gray-100
+          td.px-4.py-2.border 2
+          td.px-4.py-2.border MK002
+          td.px-4.py-2.border Basis Data
+          td.px-4.py-2.border Prof. Jane Smith
+          td.px-4.py-2.border 3
+          td.px-4.py-2.border A
+          td.px-4.py-2.border
+            button.btn.btn-outline.btn-info(onclick="document.getElementById(\'modal2\').showModal()") info
+            dialog#modal2.modal
+              .modal-box
+                h3.font-bold.text-lg Detail Nilai
+                p.py-4 Nilai UTS: 88
+                p.py-4 Nilai UAS: 90
+                .modal-action
+                  a.btn.btn-warning(href="/views/partials/kritiknilai.html") Kritik Nilai
+                  button.btn(onclick="document.getElementById(\'modal2\').close()") Close
+ 

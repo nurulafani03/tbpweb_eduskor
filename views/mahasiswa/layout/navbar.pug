@@ -1,0 +1,28 @@
+meta(charset="UTF-8")
+meta(name="viewport", content="width=device-width,initial-scale=1")
+link(href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css", rel="stylesheet", type="text/css")
+script(src="https://cdn.tailwindcss.com")
+title Navbar
+style.
+  
+  .bg-custom {
+              background-color: #16105B;
+          }
+          .dropdown-content a {
+              color: #000; 
+          }
+  
+.navbar.bg-custom.text-white
+  .flex-1
+    a.btn.btn-ghost.text-xl.text-white EduSkor
+  .dropdown.dropdown-end
+    .btn.btn-ghost.btn-circle.avatar
+      .w-10.rounded-full
+        img(alt="Tailwind CSS Navbar component", src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg")
+    ul.mt-3(class="z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52", tabindex="0")
+      li
+        a.justify-between Profil
+      li
+        a Pengaturan
+      li
+        a Keluar

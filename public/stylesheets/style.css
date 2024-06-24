@@ -6,3 +6,36 @@ body {
 a {
   color: #00B7FF;
 }
+
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 1em;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.navbar ul li {
+  display: inline;
+  margin-right: 1em;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.topbar {
+  background-color: #f4f4f4;
+  padding: 1em;
+  text-align: center;
+}
+
+.content {
+  padding: 2em;
+  text-align: center;
+}
+

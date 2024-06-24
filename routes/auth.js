@@ -1,18 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const authController = require('../controllers/authController');
 
-// Endpoint untuk login
-router.post('/login', (req, res) => {
-  const { username, password } = req.body;
-
-  // logika validasi 
-  if (username === 'admin' && password === 'admin123') {
-    // Jika kredensial valid, kirimkan respons sukses
-    res.json({ message: 'Login successful' });
-  } else {
-    // Jika kredensial tidak valid, kirimkan respons error
-    res.status(401).json({ message: 'Invalid username or password' });
-  }
-});
+router.get('/login', (req, res) => res.render('login'));
+router.post('/login', authController.login);
+router.post('/logout', authController.logout);
 
 module.exports = router;

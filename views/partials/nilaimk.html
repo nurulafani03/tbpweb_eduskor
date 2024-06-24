@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+    <style>
+        .bg-custom {
+            background-color: #16105B;
+        }
+        .btn-outline-red {
+            border: 2px solid #ff1414;
+            color: #00000000;
+        }
+        .dropdown-content a {
+            color: #000; /* Set text color to black */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar bg-custom text-white">
+        <div class="flex-1">
+            <a class="btn btn-ghost text-xl text-white">EduSkor</a>
+        </div>
+        <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                <div class="w-10 rounded-full">
+                    <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                </div>
+            </div>
+            <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                <li>
+                    <a class="justify-between">
+                        Profil 
+                    </a>
+                </li>
+                <li><a>Pengaturan</a></li>
+                <li><a>Keluar</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Layout with Sidebar -->
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="w-64 bg-custom h-screen text-white">
+            <div class="p-6">
+                <img src="/unand.png" alt="Logo" class="w-24 h-24 mx-auto">
+            </div>
+            <ul>
+                <li class="p-4 hover:bg-gray-700"><a href="/">Dashboard</a></li>
+                <li class="p-4 hover:bg-gray-700"><a href="/admin">Profil</a></li>
+                <li class="p-4 hover:bg-gray-700"><a href="/views/partials/nilaimk.html">Nilai</a></li>
+                <li class="p-4 hover:bg-gray-700"><a href="/views/partials/matakuliah.html">Matakuliah</a></li>
+                <li class="p-4 hover:bg-gray-700"><a href="/logout">Bantuan</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-10">
+            <h1 class="text-3xl font-bold">Nilai</h1>
+            <select class="select select-accent w-full max-w-xs">
+                <option disabled selected>Tahun Ajaran/Semester</option>
+                <option>2024/Genap</option>
+                <option>2023/Ganjil</option>
+            </select>
+
+            <!-- Tabel Mata Kuliah -->
+            <div class="mt-8">
+                <table class="table-auto w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-custom text-white">
+                            <th class="px-4 py-2 border">No</th>
+                            <th class="px-4 py-2 border">Kode Mata Kuliah</th>
+                            <th class="px-4 py-2 border">Nama Mata Kuliah</th>
+                            <th class="px-4 py-2 border">Dosen Pengampu</th>
+                            <th class="px-4 py-2 border">SKS</th>
+                            <th class="px-4 py-2 border">Nilai</th>
+                            <th class="px-4 py-2 border">Detail Nilai</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="px-4 py-2 border">1</td>
+                            <td class="px-4 py-2 border">MK001</td>
+                            <td class="px-4 py-2 border">Pemrograman Web</td>
+                            <td class="px-4 py-2 border">Dr. John Doe</td>
+                            <td class="px-4 py-2 border">3</td>
+                            <td class="px-4 py-2 border">A</td>
+                            <td class="px-4 py-2 border">
+                                <button class="btn btn-outline btn-info" onclick="document.getElementById('modal1').showModal()">info</button>
+                                <dialog id="modal1" class="modal">
+                                    <div class="modal-box">
+                                        <h3 class="font-bold text-lg">Detail Nilai</h3>
+                                        <p class="py-4">Nilai UTS: 90</p>
+                                        <p class="py-4">Nilai UAS: 85</p>
+                                        <div class="modal-action">
+                                            <a href="/views/partials/kritiknilai.html" class="btn btn-warning">Kritik Nilai</a>
+                                            <button class="btn" onclick="document.getElementById('modal1').close()">Close</button>
+                                        </div>
+                                    </div>
+                                </dialog>
+                            </td>
+                        </tr>
+                        <tr class="bg-gray-100">
+                            <td class="px-4 py-2 border">2</td>
+                            <td class="px-4 py-2 border">MK002</td>
+                            <td class="px-4 py-2 border">Basis Data</td>
+                            <td class="px-4 py-2 border">Prof. Jane Smith</td>
+                            <td class="px-4 py-2 border">3</td>
+                            <td class="px-4 py-2 border">A</td>
+                            <td class="px-4 py-2 border">
+                                <button class="btn btn-outline btn-info" onclick="document.getElementById('modal2').showModal()">info</button>
+                                <dialog id="modal2" class="modal">
+                                    <div class="modal-box">
+                                        <h3 class="font-bold text-lg">Detail Nilai</h3>
+                                        <p class="py-4">Nilai UTS: 88</p>
+                                        <p class="py-4">Nilai UAS: 90</p>
+                                        <div class="modal-action">
+                                            <a href="/views/partials/kritiknilai.html" class="btn btn-warning">Kritik Nilai</a>
+                                            <button class="btn" onclick="document.getElementById('modal2').close()">Close</button>
+                                        </div>
+                                    </div>
+                                </dialog>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
